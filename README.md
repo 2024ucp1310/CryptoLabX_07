@@ -14,37 +14,37 @@ Member 2 - 2024UCP1453 - Dayal
 
 ## Folder Structure
 
-classical/
-attacks/
-math/
-modern/
-analysis/
-datasets/
-outputs/
-docs/
-tests/
-utils/
+classical/ <br>
+attacks/ <br>
+math/<br>
+modern/<br>
+analysis/<br>
+datasets/<br>
+outputs/<br>
+docs/<br>
+tests/<br>
+utils/<br>
 
 ## Current Features
 
-Menu Driven Interface
-Dataset Management
-File Analysis
-Logging
-Git Version Control
+Menu Driven Interface<br>
+Dataset Management<br>
+File Analysis<br>
+Logging<br>
+Git Version Control<br>
 
 ## Future Modules
 
-• Caesar Cipher
-• Vigenere Cipher
-• Playfair Cipher
-• Hill Cipher
-• AES
-• DES
-• RSA
-• SHA
-• Frequency Analysis
-• Brute Force Attacks
+• Caesar Cipher<br>
+• Vigenere Cipher<br>
+• Playfair Cipher<br>
+• Hill Cipher<br>
+• AES<br>
+• DES<br>
+• RSA<br>
+• SHA<br>
+• Frequency Analysis<br>
+• Brute Force Attacks<br>
 
 ## Requirements
 

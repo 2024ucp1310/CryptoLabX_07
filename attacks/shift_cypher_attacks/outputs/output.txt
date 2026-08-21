@@ -1,0 +1,100 @@
+﻿PS C:\Users\udaya\Desktop\CryptoLabX_07\attacks\shift_cypher_attacks\src> ./attack
+       SHIFT CIPHER CRYPTANALYSIS
+1. Encrypt
+2. Decrypt
+3. Dictionary Attack
+4. Chi-Square Attack
+5. Compare Both Attacks
+6. Exit
+
+Enter choice: 1
+Enter plaintext: this is secret     
+Enter key (0-25): 3
+
+Ciphertext: wklv lv vhfuhw
+       SHIFT CIPHER CRYPTANALYSIS
+1. Encrypt
+2. Decrypt
+3. Dictionary Attack
+4. Chi-Square Attack
+5. Compare Both Attacks
+6. Exit
+
+Enter choice: 2      
+Enter ciphertext: wklv lv vhfuhw
+Enter key (0-25): 3
+
+Plaintext: this is secret
+       SHIFT CIPHER CRYPTANALYSIS
+1. Encrypt
+2. Decrypt
+3. Dictionary Attack
+4. Chi-Square Attack
+5. Compare Both Attacks
+6. Exit
+
+Enter choice: 3
+Enter ciphertext: wklv lv vhfuhw
+
+DICTIONARY ATTACK
+Key: 0 | Score: 0 | wklv lv vhfuhw
+Key: 1 | Score: 0 | vjku ku ugetgv
+Key: 2 | Score: 0 | uijt jt tfdsfu
+Key: 3 | Score: 0 | this is secret
+Key: 4 | Score: 0 | sghr hr rdbqds
+
+Best Result
+Key       : 0
+Plaintext : wklv lv vhfuhw
+Score     : 0
+       SHIFT CIPHER CRYPTANALYSIS
+1. Encrypt
+2. Decrypt
+3. Dictionary Attack
+4. Chi-Square Attack
+5. Compare Both Attacks
+6. Exit
+
+Enter choice: 4
+Enter ciphertext: wklv lv vhfuhw
+
+CHI-SQUARE ATTACK
+Key: 3 | Score: 16.70 | this is secret
+Key: 7 | Score: 29.39 | pdeo eo oaynap
+Key: 18 | Score: 34.77 | estd td dpncpe
+Key: 19 | Score: 42.95 | drsc sc combod
+Key: 9 | Score: 64.17 | nbcm cm mywlyn
+
+Best Result
+Key       : 3
+Plaintext : this is secret
+Score     : 16.70
+       SHIFT CIPHER CRYPTANALYSIS
+1. Encrypt
+2. Decrypt
+3. Dictionary Attack
+4. Chi-Square Attack
+5. Compare Both Attacks
+6. Exit
+
+Enter choice: 5
+Enter ciphertext: wklv lv vhfuhw
+
+COMPARISON
+
+Dictionary Scoring
+Key       : 0
+Plaintext : wklv lv vhfuhw
+
+Chi-Square Analysis
+Key       : 3
+Plaintext : this is secret
+       SHIFT CIPHER CRYPTANALYSIS
+1. Encrypt
+2. Decrypt
+3. Dictionary Attack
+4. Chi-Square Attack
+5. Compare Both Attacks
+6. Exit
+
+Enter choice: 6

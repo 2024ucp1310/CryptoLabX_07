@@ -88,6 +88,96 @@ void frequency_analysis(string ciphertext)
     cout << "\n";
 }
 
+void word_frequency_analysis(string ciphertext)
+{
+    map<string, int> frequency;
+
+    string word = "";
+
+    for (int i = 0; i <= ciphertext.length(); i++)
+    {
+        char c;
+
+        if (i < ciphertext.length())
+            c = ciphertext[i];
+        else
+            c = ' ';
+
+        if (isalpha(c))
+        {
+            word += toupper(c);
+        }
+        else
+        {
+            if (!word.empty())
+            {
+                frequency[word]++;
+                word = "";
+            }
+        }
+    }
+
+
+    vector<pair<string, int>> words;
+
+    for (auto x : frequency)
+    {
+        words.push_back(x);
+    }
+
+    sort(words.begin(), words.end(),
+         [](pair<string, int> a, pair<string, int> b)
+         {
+             return a.second > b.second;
+         });
+
+    cout << "\n===== WORD FREQUENCY ANALYSIS =====\n";
+
+    cout << "\nMost repeated words:\n";
+
+    for (int i = 0; i < words.size() && i < 20; i++)
+    {
+        cout << words[i].first
+             << " -> "
+             << words[i].second
+             << endl;
+    }
+
+    cout << "\nOne-letter words:\n";
+
+    for (auto x : words)
+    {
+        if (x.first.length() == 1)
+        {
+            cout << x.first << " -> "
+                 << x.second << endl;
+        }
+    }
+
+    cout << "\nTwo-letter words:\n";
+
+    for (auto x : words)
+    {
+        if (x.first.length() == 2)
+        {
+            cout << x.first << " -> "
+                 << x.second << endl;
+        }
+    }
+
+    cout << "\nThree-letter words:\n";
+
+    for (auto x : words)
+    {
+        if (x.first.length() == 3)
+        {
+            cout << x.first << " -> "
+                 << x.second << endl;
+        }
+    }
+}
+
+
 int main()
 {
 
@@ -146,5 +236,6 @@ int main()
     cout << "Ciphertext saved in outputs/ciphertext.txt" << endl;
 	
     frequency_analysis(ciphertext);
+    word_frequency_analysis(ciphertext);
     return 0;
 }

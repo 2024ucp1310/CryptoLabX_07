@@ -427,6 +427,12 @@ int main()
 	
 	cout << "\n===== CIPHERTEXT TO PARTIAL PLAINTEXT =====\n";
 	showWordMappings(ciphertext, key_);
+	
+	ofstream output_("../outputs/recovered_plaintext.txt");
+	
+	output_ << decryptWithKey(ciphertext, key_);
+
+	output_.close();
     
     return 0;
 }

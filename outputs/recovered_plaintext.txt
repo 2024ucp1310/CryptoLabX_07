@@ -1,0 +1,32 @@
+where the final equality holds by condition.he above theorem shows an inherent
+limitation of schemes that achieve perfect secrecy. Even so, individuals occasionally claim they have developed a radically new encryption scheme that and achieves the security of the one-time pad without using
+keys as long as what is being encrypted. The above proof demonstrates that
+such claims cannot be true; anyone making such claims either knows very
+little about cryptography or is blatantly lying.We ended the previous section by noting some drawbacks of the one-time
+pad encryption scheme. Here, we show that these drawbacks are not specific
+to that scheme, but are instead inherent limitations of perfect secrecy. Specifically, we prove that any perfectly secret encryption scheme must have a key
+space that is at least as large as the message space. If all keys are the same
+length, and the message space consists of all strings of some fixed length, this
+implies that the key is at least as long as the message. In particular, the key
+length of the one-time pad is optimal.Vernam patented a perfectly secret encryption scheme now called
+the one-time pad. At the time Vernam proposed the scheme, there was no
+proof that it was perfectly secret; in fact, there was not yet a notion of what
+perfect secrecy was. however, Shannon introduced the definition of perfect secrecy and demonstrated that the one-time
+pad achieves that level of security.and thus learn the exclusive-or of the two messages or, equivalently, exactly
+where the two messages differ. While this may not seem very significant, it is
+enough to rule out any claims of perfect secrecy for encrypting two messages
+using the same key. Moreover, if the messages correspond to natural-language
+text, then given the exclusive-or of two sufficiently long messages it is possible
+to perform frequency analysis The intuition behind the proof is as follows. To see that the
+stated conditions imply perfect secrecy, note that condition means that
+any ciphertext c could be the result of encrypting any possible plaintext m,
+because there is some key k mapping m to c. Since there is a unique such key,
+and each key is chosen with equal probability, perfect secrecy follows as for
+the one-time pad. For the other direction, perfect secrecy immediately implies
+that for every m and c there is at least one key mapping m to c. In the previous chapter we saw some fundamental limitations of perfect secrecy. In this chapter we begin our study of modern cryptography by introducing the weaker notion of computational secrecy. We will
+then show how this definition can be used to bypass the impossibility results
+shown previously and, in particular, how a short key  can
+be used to encrypt many long messages.
+Along the way we will study the fundamental notion of pseudorandomness,
+which captures the idea that something can “look” completely random even
+though it is not. This powerful concept underlies much of modern cryptography, and has applications and implications beyond the field as well.

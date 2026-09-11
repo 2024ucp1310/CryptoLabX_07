@@ -282,6 +282,49 @@ string decryptWithKey(string ciphertext, map<char, char> key)
     return plaintext;
 }
 
+void showWordMappings(string ciphertext, map<char, char> key)
+{
+    string word = "";
+
+    for (int i = 0; i <= ciphertext.length(); i++)
+    {
+        char c;
+
+        if (i < ciphertext.length())
+            c = ciphertext[i];
+        else
+            c = ' ';
+
+        if (isalpha(c))
+        {
+            word += toupper(c);
+        }
+        else
+        {
+            if (!word.empty())
+            {
+                string decrypted = "";
+
+                for (char x : word)
+                {
+                    if (key.find(x) != key.end())
+                        decrypted += key[x];
+                    else
+                        decrypted += '_';
+                }
+
+                if (decrypted.find('_') != string::npos)
+                {
+                    cout << word << " -> "
+                         << decrypted << endl;
+                }
+
+                word = "";
+            }
+        }
+    }
+}
+
 
 
 int main()
@@ -347,15 +390,43 @@ int main()
     
     map<char, char> key_;
 
-	key_['Z'] = 'T';
+	key_['A'] = 'K';
+	key_['B'] = 'X';
+	key_['C'] = 'V';
+	key_['D'] = 'M';
+	key_['E'] = 'C';
+	key_['F'] = 'N';
+	key_['G'] = 'O';
+	key_['H'] = 'P';
 	key_['I'] = 'H';
+	key_['J'] = 'Q';
+	key_['K'] = 'R';
+	key_['L'] = 'S';
+	key_['N'] = 'Y';
+	key_['O'] = 'I';
 	key_['Q'] = 'A';
+	key_['R'] = 'D';
+	key_['S'] = 'L';
 	key_['T'] = 'E';
+	key_['U'] = 'G';
+	key_['V'] = 'W';
+	key_['W'] = 'B';
+	key_['X'] = 'U';
+	key_['Y'] = 'F';
+	key_['Z'] = 'T';
+
+	// Test hypothesis
+	key_['M'] = 'J';
+	key_['P'] = 'Z';
+
 
 	string partialPlaintext = decryptWithKey(ciphertext, key_);
 
 	cout << "\n===== PARTIAL PLAINTEXT =====\n";
 	cout << partialPlaintext << endl;
+	
+	cout << "\n===== CIPHERTEXT TO PARTIAL PLAINTEXT =====\n";
+	showWordMappings(ciphertext, key_);
     
     return 0;
 }

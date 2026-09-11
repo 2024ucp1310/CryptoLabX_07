@@ -249,6 +249,39 @@ void pattern_analysis(string ciphertext)
     }
 }
 
+string decryptWithKey(string ciphertext, map<char, char> key)
+{
+    string plaintext = "";
+
+    for (char c : ciphertext)
+    {
+        if (isalpha(c))
+        {
+            char upper = toupper(c);
+
+            if (key.find(upper) != key.end())
+            {
+                char decrypted = key[upper];
+
+                if (islower(c))
+                    decrypted = tolower(decrypted);
+
+                plaintext += decrypted;
+            }
+            else
+            {
+                plaintext += '_';
+            }
+        }
+        else
+        {
+            plaintext += c;
+        }
+    }
+
+    return plaintext;
+}
+
 
 
 int main()
@@ -311,5 +344,18 @@ int main()
     frequency_analysis(ciphertext);
     word_frequency_analysis(ciphertext);
     pattern_analysis(ciphertext);
+    
+    map<char, char> key_;
+
+	key_['Z'] = 'T';
+	key_['I'] = 'H';
+	key_['Q'] = 'A';
+	key_['T'] = 'E';
+
+	string partialPlaintext = decryptWithKey(ciphertext, key_);
+
+	cout << "\n===== PARTIAL PLAINTEXT =====\n";
+	cout << partialPlaintext << endl;
+    
     return 0;
 }

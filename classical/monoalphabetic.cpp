@@ -177,6 +177,79 @@ void word_frequency_analysis(string ciphertext)
     }
 }
 
+string getPattern(string word)
+{
+    map<char, int> patternNumber;
+
+    string pattern = "";
+
+    int nextNumber = 0;
+
+    for (char c : word)
+    {
+        if (patternNumber.find(c) == patternNumber.end())
+        {
+            patternNumber[c] = nextNumber;
+            nextNumber++;
+        }
+
+        pattern += char('0' + patternNumber[c]);
+    }
+
+    return pattern;
+}
+
+void pattern_analysis(string ciphertext)
+{
+    map<string, vector<string>> patterns;
+
+    string word = "";
+
+    for (int i = 0; i <= ciphertext.length(); i++)
+    {
+        char c;
+
+        if (i < ciphertext.length())
+            c = ciphertext[i];
+        else
+            c = ' ';
+
+        if (isalpha(c))
+        {
+            word += toupper(c);
+        }
+        else
+        {
+            if (!word.empty())
+            {
+                string pattern = getPattern(word);
+
+                patterns[pattern].push_back(word);
+
+                word = "";
+            }
+        }
+    }
+
+    cout << "\n===== PATTERN ANALYSIS =====\n";
+
+    for (auto x : patterns)
+    {
+        if (x.second.size() > 1)
+        {
+            cout << "Pattern " << x.first << " : ";
+
+            for (string word : x.second)
+            {
+                cout << word << " ";
+            }
+
+            cout << "\n";
+        }
+    }
+}
+
+
 
 int main()
 {
@@ -237,5 +310,6 @@ int main()
 	
     frequency_analysis(ciphertext);
     word_frequency_analysis(ciphertext);
+    pattern_analysis(ciphertext);
     return 0;
 }
